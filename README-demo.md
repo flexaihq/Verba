@@ -3,6 +3,7 @@
 1. Since it is a RAG app, the model has a RAG prompt, and you have to get at least one document in the DB before using the chat
 2. You can find documents in this bucket: https://eu-west-3.console.aws.amazon.com/s3/buckets/rag-demo-flexai
 3. You need a HF api key
+4. It is recommended to clear the chat (using the button below the send message icon) between questions to reset the context and prevent it from overflowing.
 
 # Example of .env
 

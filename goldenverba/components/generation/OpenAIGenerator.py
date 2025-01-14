@@ -1,10 +1,12 @@
 import os
+from typing import List
 from dotenv import load_dotenv
 from goldenverba.components.interfaces import Generator
 from goldenverba.components.types import InputConfig
 from goldenverba.components.util import get_environment, get_token
 import httpx
 import json
+from wasabi import msg
 
 load_dotenv()
 
@@ -20,12 +22,21 @@ class OpenAIGenerator(Generator):
         self.description = "Using OpenAI LLM models to generate answers to queries"
         self.context_window = 10000
 
-        models = ["gpt-4o", "gpt-3.5-turbo"]
+        api_key = get_token("OPENAI_API_KEY")
+
+        # Fetch available models
+        base_url = os.getenv("OPENAI_BASE_URL")
+        models = (
+            ["gpt-4o", "gpt-3.5-turbo"]
+            if not os.getenv("CUSTOM_OPENAI", False)
+            else self.get_models(api_key, base_url)
+        )
+        default_model = os.getenv("OPENAI_MODEL", models[0])
 
         self.config["Model"] = InputConfig(
             type="dropdown",
-            value=models[0],
-            description="Select an OpenAI Embedding Model",
+            value=default_model,
+            description="Select an OpenAI Model",
             values=models,
         )
 
@@ -118,3 +129,21 @@ class OpenAIGenerator(Generator):
         )
 
         return messages
+
+    @staticmethod
+    def get_models(token: str, url: str) -> List[str]:
+        """Fetch available embedding models from OpenAI API."""
+        try:
+            import requests  # Import here to avoid dependency if not needed
+
+            headers = {"Authorization": f"Bearer {token}"}
+            response = requests.get(f"{url}/models", headers=headers)
+            response.raise_for_status()
+            fetch_models = [model["id"] for model in response.json()["data"]]
+            return fetch_models
+        except Exception as e:
+            msg.info(f"Failed to fetch OpenAI models: {str(e)}")
+            return [
+                "gpt-4o",
+                "gpt-3.5-turbo",
+            ]

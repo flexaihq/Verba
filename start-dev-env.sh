@@ -1,1 +1,2 @@
-pip install -e . && verba start --port 8000 --host 0.0.0.0
+unset OPENAI_API_KEY OPENAI_BASE_URL OPENAI_EMBED_API_KEY OPENAI_EMBED_BASE_URL OPENAI_EMBED_MODEL OPENAI_MODEL CHATBOT_PROMPT
+verba start --port 8000 --host 0.0.0.0

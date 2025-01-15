@@ -63,6 +63,12 @@ Create your env and activate it
 source venv/bin/activate
 ```
 
+Build your dev env with:
+
+```bash
+./build-dev-env.sh
+```
+
 Run your dev env with:
 
 ```bash

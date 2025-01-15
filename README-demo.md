@@ -33,8 +33,7 @@ CHATBOT_PROMPT="You are FlexBot, an assistant for question-answering tasks. Use 
 ```bash
 flexai inference serve llama-`uuid` --hf-token-secret GC_HF_TOKEN -- --model=meta-llama/Llama-3.1-8B-Instruct
 # flexai inference serve -a 2 llama-`uuid` --hf-token-secret GC_HF_TOKEN -- --model=meta-llama/Llama-3.3-70B-Instruct
-flexai inference serve llama-embed-`uuid` --hf-token-secret GC_HF_TOKEN -- --model=mmeta-llama/Llama-3.1-8B-Instruct --task=embed
-
+flexai inference serve llama-embed-`uuid` --hf-token-secret GC_HF_TOKEN -- --model=meta-llama/Meta-Llama-3-8B-Instruct --task=embed
 ```
 
 ### Staging config

@@ -17,7 +17,6 @@ OPENAI_BASE_URL=https://inference-b2b7913e-79f9-465d-9572-7b6893376b16-0717b173.
 # OPENAI_MODEL=meta-llama/Meta-Llama-3-8B-Instruct # staging
 OPENAI_MODEL=meta-llama/Llama-3.1-8B-Instruct
 OPENAI_API_KEY=xxxxxxxx-5d24-4903-bdec-938e9b154370
-CUSTOM_OPENAI=true
 OPENAI_EMBED_BASE_URL=https://inference-2ea8eeb8-1931-4da6-8ea1-5e67a4e7002d-446f1ee8.platform.staging.flexsystems.ai/v1
 # OPENAI_EMBED_MODEL=meta-llama/Meta-Llama-3-8B-Instruct # staging
 OPENAI_EMBED_MODEL=meta-llama/Llama-3.1-8B-Instruct

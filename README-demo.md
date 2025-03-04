@@ -23,7 +23,7 @@ OPENAI_EMBED_MODEL=meta-llama/Llama-3.1-8B-Instruct
 OPENAI_EMBED_API_KEY=xxxxxxxx-be4c-4a81-82bd-ed590ba1a89a
 CUSTOM_OPENAI_EMBED=true
 DEFAULT_DEPLOYMENT=Local
-CHATBOT_PROMPT="You are FlexBot, an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise."
+SYSYEM_MESSAGE_PROMPT="You are FlexBot, an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer, just say that you don't know. Use three sentences maximum and keep the answer concise."
 ```
 
 ## Start the vLLM instances on FCS

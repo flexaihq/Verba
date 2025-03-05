@@ -9,6 +9,12 @@
 5. When you have large documents (> 2 Mo), it is better to import them one by one.
 6. If you update the endpoint, you'll get something like `https://inference-xxxx.platform.flex.ai` from FCS, do not forget to add `/v1` suffix in the `.env`, becoming: `OPENAI_BASE_URL=https://inference-xxxx.platform.flex.ai/v1`
 
+## Weaviate Embedded
+
+When `DEFAULT_DEPLOYMENT=Local`, Weaviate Embedded is used as the vector database. Its permanent data path is set as follows:
+- If the `XDG_DATA_HOME` environment variable is set, the default path is: `XDG_DATA_HOME/weaviate/`
+- Otherwise, the default path is: `~/.local/share/weaviate`
+
 ## Example of .env
 
 ```bash

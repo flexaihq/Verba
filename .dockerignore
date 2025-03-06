@@ -1,0 +1,9 @@
+venv
+data
+build
+.env
+.git
+.github
+.gitignore
+.pytest_cache
+.vscode

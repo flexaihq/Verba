@@ -5,6 +5,11 @@ on:
     branches: ["flexai-main"]
   pull_request:
 
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
 env:
   REGISTRY: rg.fr-par.scw.cloud/rag-app
 

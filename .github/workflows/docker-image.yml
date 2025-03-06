@@ -4,7 +4,6 @@ on:
   push:
     branches: ["flexai-main"]
   pull_request:
-    branches: ["flexai-main"]
 
 env:
   REGISTRY: rg.fr-par.scw.cloud/rag-app
